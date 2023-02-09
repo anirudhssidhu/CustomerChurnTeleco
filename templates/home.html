@@ -18,7 +18,7 @@
   <hr>
 
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
+    <form action="{{ url_for('predict_api')}}"method="post">
       <label for="gender" id="gender">gender</label>
       <select name="gender" id="gender">
         <option value="Male">Male</option>
@@ -57,7 +57,7 @@
       <select name="MultipleLines" id="MultipleLines">
         <option value="Yes">Yes</option>
         <option value="No">No</option>
-        <option value="No Phone service">No Phone service</option>
+        <option value="No phone service">No phone service</option>
       </select><br>
 
       <label for="InternetService" id="InternetService">InternetService</label>
