@@ -14,25 +14,129 @@
 
 <body>
  <div class="login">
-	<h1>Boston House Price Prediction</h1>
+	<h1>Teleco Customer Churn Predicition</h1>
+  <hr>
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-      <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
-    	<input type="text" name="ZN" placeholder="ZN" required="required" /><br>
-        <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
-        <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
-        <input type="text" name="NOX" placeholder="NOX" required="required" /><br>
-        <input type="text" name="RM" placeholder="RM" required="required" /><br>
-        <input type="text" name="Age" placeholder="Age" required="required" /><br>
-        <input type="text" name="DIS" placeholder="DIS" required="required" /><br>
-        <input type="text" name="RAD" placeholder="RAD" required="required" /><br>
-        <input type="text" name="TAX" placeholder="TAX" required="required" /><br>
-        <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
-        <input type="text" name="B" placeholder="B" required="required" /><br>
-        <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
+      <label for="gender" id="gender">gender</label>
+      <select name="gender" id="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select><br>
+      
 
-       
+      <label for='SeniorCitizen' id='SeniorCitizen'>SeniorCitizen</label>
+      <select name='SeniorCitizen' id='SeniorCitizen'>
+        <option value="1">1</option>
+        <option value="0">0</option>
+      </select><br>
+
+      <label for="Partner" id="Partner">Partner</label>
+      <select name="Partner" id="Partner">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select><br>
+
+      <label for="Dependents" id="Dependents">Dependents</label>
+      <select name="Dependents" id="Dependents">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select><br>
+
+      <label for="tenure" id="tenure">tenure</label>
+      <input type="number" id="tenure" name="tenure" min="1" max="75" /><br>
+
+      <label for="PhoneService" id="PhoneService">PhoneService</label>
+      <select name="PhoneService" id="PhoneService">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select><br>
+
+      <label for="MultipleLines" id="MultipleLines">MultipleLines</label>
+      <select name="MultipleLines" id="MultipleLines">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="No Phone service">No Phone service</option>
+      </select><br>
+
+      <label for="InternetService" id="InternetService">InternetService</label>
+      <select name="InternetService" id="InternetService">
+        <option value="Fiber optic">Fiber optic</option>
+        <option value="DSL">DSL</option>
+        <option value="No">No</option>
+      </select><br>
+
+      <label for="OnlineSecurity" id="OnlineSecurity">OnlineSecurity</label>
+      <select name="OnlineSecurity" id="OnlineSecurity">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="No internet service">No internet service</option>
+      </select><br>
+
+      <label for="OnlineBackup" id="OnlineBackup">OnlineBackup</label>
+      <select name="OnlineBackup" id="OnlineBackup">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="No internet service">No internet service</option>
+      </select><br>
+
+      <label for="DeviceProtection" id="DeviceProtection">DeviceProtection</label>
+      <select name="DeviceProtection" id="DeviceProtection">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="No internet service">No internet service</option>
+      </select><br>
+
+      <label for="TechSupport" id="TechSupport">TechSupport</label>
+      <select name="TechSupport" id="TechSupport">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="No internet service">No internet service</option>
+      </select><br>
+
+      <label for="StreamingTV" id="StreamingTV">StreamingTV</label>
+      <select name="StreamingTV" id="StreamingTV">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="No internet service">No internet service</option>
+      </select><br>
+
+      <label for="StreamingMovies" id="StreamingMovies">StreamingMovies</label>
+      <select name="StreamingMovies" id="StreamingMovies">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="No internet service">No internet service</option>
+      </select><br>
+
+      <label for="Contract" id="Contract">Contract</label>
+      <select name="Contract" id="Contract">
+        <option value="Month-to-month">Month-to-month</option>
+        <option value="Two year">Two year</option>
+        <option value="One year">One year</option>
+      </select><br>
+
+      <label for="PaperlessBilling" id="PaperlessBilling">PaperlessBilling</label>
+      <select name="PaperlessBilling" id="PaperlessBilling">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select><br>
+
+      <label for="PaymentMethod" id="PaymentMethod">PaymentMethod</label>
+      <select name="PaymentMethod" id="PaymentMethod">
+        <option value="Electronic check">Electronic check</option>
+        <option value="Mailed check">Mailed check</option>
+        <option value="Bank transfer (automatic)">Bank transfer</option>
+        <option value="Credit card (automatic)">Credit card</option>
+      </select><br>
+
+      <label for="MonthlyCharges" id="MonthlyCharges">MonthlyCharges</label>
+      <input type="number" id="MonthlyCharges" name="MonthlyCharges" step="0.01" min="7.50" max="120" /><br>
+
+      <label for="TotalCharges" id="TotalCharges">TotalCharges</label>
+      <input type="number" id="TotalCharges" name="TotalCharges" step="0.01" min="7.50" max="9000" /><br>
+      <br> 
+      <hr>    
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
