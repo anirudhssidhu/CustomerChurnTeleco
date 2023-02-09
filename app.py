@@ -7,13 +7,17 @@ import pandas as pd
 app = Flask(__name__)
 
 # loading the columns
-numVariables = pickle.load(open("./models/ScalingVar.pkl", "rb"))
-labelVariables = pickle.load(open("./models/LabelVar.pkl","rb"))
-oneHotVariables = pickle.load(open("./models/OneHotVar.pkl","rb"))
+labelVars = pickle.load(open("./models/labelVars.pkl","rb"))
+oneHotVars = pickle.load(open("./models/oneHotVars.pkl","rb"))
+numVars = pickle.load(open("./models/numVars.pkl","rb"))
+totalCols = pickle.load(open("./models/totalCols.pkl","rb"))
 
 # loading the models
-scaler = pickle.load(open("./models/Scaler.pkl", "rb"))
-model = pickle.load(open("./models/BestModel.pkl", "rb"))
+labelGender = pickle.load(open("./models/labelGender.pkl","rb"))
+oneHotEncoder = pickle.load(open("./models/oneHotEncoder.pkl","rb"))
+MinMaxScaler = pickle.load(open("./models/MinMaxScaler.pkl","rb"))
+best_model = pickle.load(open("./models/best_model.pkl","rb"))
+labelRest = pickle.load(open("./models/labelRest.pkl","rb"))
 
 @app.route("/")
 def home():
